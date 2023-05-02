@@ -89,3 +89,57 @@ footer.querySelector('a').textContent = siteContent.footer.copyright;
 footer.querySelector('a').classList.add('bold');
 
 console.log('project wired!')
+
+// Nav
+const navLinks = document.querySelectorAll('header nav a')
+const navList = Array.from(navLinks)
+console.log(navList)
+const navText = Object.values(siteContent.nav)
+navList.forEach((link, i ) => {
+  link.classList.add('italic');
+  link.textContent = navText[i];
+})
+
+// Images
+const logo = document.querySelector('#logo-img')
+logo.setAttribute('src', siteContent.images['logo-img'])
+const cta = document.querySelector('#cta-img')
+cta.setAttribute('src', siteContent.images['cta-img'])
+const accent = document.querySelector('#middle-img')
+accent.setAttribute('src', siteContent.images['accent-img'])
+const ctaText = document.querySelector('.cta-text')
+console.log(ctaText)
+ctaText.querySelector('h1').textContent = siteContent.cta.h1
+ctaText.querySelector('button').textContent = siteContent.cta.button
+
+// Main: Top
+const topContent = document.querySelector('.top-content')
+console.log(topContent)
+topContent.children[0].querySelector('h4').textContent = siteContent["main-content"]['features-h4']
+topContent.children[0].querySelector('p').textContent = siteContent['main-content']['features-content']
+topContent.children[1].querySelector('h4').textContent = siteContent['main-content']['about-h4']
+topContent.children[1].querySelector('p').textContent = siteContent['main-content']['about-content']
+
+// Main: Bottom
+const botContent = document.querySelector('.bottom-content')
+console.log(botContent)
+botContent.children[0].querySelector('h4').textContent = siteContent['main-content']['product-h4']
+botContent.children[0].querySelector('p').textContent = siteContent['main-content']['product-content']
+botContent.children[1].querySelector('h4').textContent = siteContent['main-content']['services-h4']
+botContent.children[1].querySelector('p').textContent = siteContent['main-content']['services-content']
+botContent.children[2].querySelector('h4').textContent = siteContent['main-content']['vision-h4']
+botContent.children[2].querySelector('p').textContent = siteContent['main-content']['vision-content']
+
+// Contact
+const contact = document.querySelector('.contact')
+console.log(contact)
+contact.querySelector('h4').textContent = siteContent.contact['contact-h4']
+contact.children[1].textContent = siteContent.contact.address
+contact.children[2].textContent = siteContent.contact.phone
+contact.children[3].textContent = siteContent.contact.email
+
+// Footer
+const footer = document.querySelector('footer a')
+console.log(footer)
+footer.textContent = siteContent.footer.copyright
+footer.classList.add('bold')
